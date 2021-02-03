@@ -1,0 +1,15 @@
+current directory: /Users/nyannaing/Documents/app_academy/AAClasswork/W6D3/routes/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.0/ext/bootsnap
+/Users/nyannaing/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20210203-1608-e0qxar.rb extconf.rb
+creating Makefile
+
+current directory: /Users/nyannaing/Documents/app_academy/AAClasswork/W6D3/routes/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.0/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/nyannaing/Documents/app_academy/AAClasswork/W6D3/routes/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.0/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/nyannaing/Documents/app_academy/AAClasswork/W6D3/routes/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.0/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210203-1608-zwv98n/bootsnap

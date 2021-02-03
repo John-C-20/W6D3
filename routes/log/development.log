@@ -404,3 +404,261 @@ Processing by UsersController#index as */*
 Completed 200 OK in 17ms (Views: 5.9ms | ActiveRecord: 7.1ms)
 
 
+  [1m[35m (759.8ms)[0m  [1m[35mCREATE DATABASE "routes_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (610.2ms)[0m  [1m[35mCREATE DATABASE "routes_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (143.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7618215552623189640)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20210203205115)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (26.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL)[0m
+  ↳ db/migrate/20210203205115_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (7.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210203205115"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-03 21:40:26.122452"], ["updated_at", "2021-02-03 21:40:26.122452"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7618215552623189640)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Jon"], ["email", "asb123@gmail.com"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Ryan"], ["email", "aweporiu@gmail.com"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users" for ::1 at 2021-02-03 16:44:19 -0500
+  [1m[35m (51.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4
+Completed 200 OK in 298ms (Views: 59.8ms | ActiveRecord: 135.9ms)
+
+
+Started GET "/users/1" for ::1 at 2021-02-03 16:44:44 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2021-02-03 16:45:59 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 236ms (Views: 1.0ms | ActiveRecord: 170.6ms)
+
+
+Started POST "/users?name=Brad%20Trick&email=brad@gmail.com" for ::1 at 2021-02-03 16:56:59 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Brad Trick", "email"=>"brad@gmail.com"}
+Completed 400 Bad Request in 14ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/users?name=Brad%20Trick&email=brad@gmail.com" for ::1 at 2021-02-03 16:58:15 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Brad Trick", "email"=>"brad@gmail.com"}
+Completed 400 Bad Request in 28ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/users?user[name]=Brad%20Trick&user[email]=brad@gmail.com" for ::1 at 2021-02-03 16:59:22 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Brad Trick", "email"=>"brad@gmail.com"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 0):
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/users?user[name]=Brad%20Trick&user[email]=brad@gmail.com" for ::1 at 2021-02-03 16:59:52 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Brad Trick", "email"=>"brad@gmail.com"}}
+Unpermitted parameters: :name, :email
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (91.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 422 Unprocessable Entity in 433ms (ActiveRecord: 214.4ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Name can't be blank, Email can't be blank:
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/users?user[name]=Brad%20Trick&user[email]=brad@gmail.com" for ::1 at 2021-02-03 17:01:14 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Brad Trick", "email"=>"brad@gmail.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (26.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Brad Trick"], ["email", "brad@gmail.com"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 271ms (Views: 1.2ms | ActiveRecord: 90.6ms)
+
+
+Started POST "/users?name=Brad%20Trick&email=brad@gmail.com" for ::1 at 2021-02-03 17:01:45 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Brad Trick", "email"=>"brad@gmail.com"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/users?user[name]=Brad%20Trick&user[email]=brad@gmail.com" for ::1 at 2021-02-03 17:02:15 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Brad Trick", "email"=>"brad@gmail.com"}}
+  [1m[35m (18.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (63.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Brad Trick"], ["email", "brad@gmail.com"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (71.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 162ms (Views: 0.5ms | ActiveRecord: 153.8ms)
+
+
+Started POST "/users" for ::1 at 2021-02-03 17:02:32 -0500
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/users_controller.rb:8:in `create'
+
+Started GET "/users" for ::1 at 2021-02-03 17:02:41 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (78.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4
+Completed 200 OK in 82ms (Views: 3.3ms | ActiveRecord: 78.2ms)
+
+
+Started DELETE "/users/4" for ::1 at 2021-02-03 17:06:00 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  [1m[35m (5.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Destroy (25.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Load (14.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4
+Completed 200 OK in 299ms (Views: 10.6ms | ActiveRecord: 229.5ms)
+
+
+Started DELETE "/users/4" for ::1 at 2021-02-03 17:06:24 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 404 Not Found in 139ms (ActiveRecord: 119.4ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=4:
+  app/controllers/users_controller.rb:19:in `destroy'
+
+Started DELETE "/users/3" for ::1 at 2021-02-03 17:06:33 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  [1m[35m (29.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Destroy (2.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Load (25.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4
+Completed 200 OK in 82ms (Views: 2.6ms | ActiveRecord: 61.8ms)
+
+
+Started POST "/users?user[name]=Brad&user[email]=braaad@gmail.com" for ::1 at 2021-02-03 17:08:10 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Brad", "email"=>"braaad@gmail.com"}}
+  [1m[35m (15.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (15.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Brad"], ["email", "braaad@gmail.com"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 66ms (Views: 0.4ms | ActiveRecord: 61.8ms)
+
+
+Started GET "/users" for ::1 at 2021-02-03 17:08:35 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (11.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4
+Completed 200 OK in 14ms (Views: 1.6ms | ActiveRecord: 11.5ms)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/users?user[name]=Henry" for ::1 at 2021-02-03 17:22:25 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Henry"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 422 Unprocessable Entity in 78ms (Views: 0.7ms | ActiveRecord: 39.5ms)
+
+
+Started POST "/users?user[name]=Henry" for ::1 at 2021-02-03 17:23:03 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Henry"}}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (15.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 422 Unprocessable Entity in 181ms (ActiveRecord: 116.4ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email can't be blank:
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/users?user[name]=Henry" for ::1 at 2021-02-03 17:23:19 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Henry"}}
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (57.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 422 Unprocessable Entity in 233ms (Views: 0.3ms | ActiveRecord: 166.0ms)
+
+
